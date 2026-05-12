@@ -1,0 +1,43 @@
+Descripción de las tareas
+
+TASK 1  👍
+    
+    1. Creación del objeto de productos:
+
+    Cada producto debe contener las propiedades:
+    id (clave única del producto)
+    nombre (nombre del producto)
+    precio (valor numérico)
+
+TASK 2  👍
+    2. Uso de Set en JavaScript:
+
+    Crea un Set con una lista de números que incluya valores repetidos.
+    Imprime en consola el contenido del Set para mostrar cómo elimina los duplicados automáticamente.
+    Agrega un nuevo número al Set utilizando el método .add().
+    Verifica si un número específico existe dentro del Set con .has().
+    Elimina un número del Set con .delete().
+    Recorre el Set utilizando un for…of para mostrar cada valor.
+
+TASK 3  👍
+    3. Creación de un Map:
+
+    Crea un Map que relacione la categoría del producto (clave) con el nombre del producto (valor).
+    Asegúrate de que el Map refleje correctamente la información adicional de cada producto.
+
+TASK 4  
+    4. Iteración sobre las estructuras de datos:
+
+    Recorre e imprime los datos en la consola:
+    Usa for…in para listar propiedades y valores del objeto.
+    Usa for…of para recorrer el Set.
+    Usa forEach() para recorrer el Map y mostrar claves y valores de forma descriptiva.
+
+TASK 5
+    5. Validación y pruebas:
+    
+    Implementa validaciones para asegurar que cada producto tenga id, nombre y precio válidos.
+    Realiza pruebas mostrando:
+    Lista completa de productos (objeto)
+    Lista de productos únicos (Set)
+    Categorías y nombres de productos (Map)
