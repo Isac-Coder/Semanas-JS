@@ -12,8 +12,7 @@ console.log(lista);
 lista.add(6)
 console.log(lista);
 
-lista.has(6)
-console.log(lista);
+console.log(lista.has(6));
 
 lista.delete(5)
 console.log(lista);
@@ -22,6 +21,12 @@ for(const L of lista) {
     console.log(L);
 };
 
-const resultado = [...lista].map(n => n * 1)
+const mapa = new Map();
+mapa.set("ID", "N001");
+mapa.set("Nombre", "Zapato");
+mapa.set("Precio", "2000");
 
-console.log(resultado);
+console.log(mapa);
+
+console.log(mapa.get("Nombre"));
+
