@@ -1,0 +1,46 @@
+TASK 1
+    1. Estructura base (HTML):
+        Crea manipulacion_dom.html con:
+        Un título y breve instrucción.
+        Un <input> de texto y un botón “Agregar”.
+        Una <ul id="listaNotas"></ul> para renderizar notas.
+
+TASK 2
+    2. Selección e inspección (JS):
+        En un archivo de JavaScript, selecciona:
+        input, botón, <ul> usando getElementById y/o querySelector
+        Loggea en consola las referencias para confirmar que existen.
+
+TASK 3
+    3. Agregar notas al DOM:
+        Al hacer click en Agregar:
+        Valida que el input no esté vacío (mensaje simple si lo está)
+        Crea un <li> con textContent = "…" y un botón “Eliminar”.
+        Inserta el <li> con appendChild().
+        Limpia el input y enfoca de nuevo.
+        Imprime en consola que se agregó la nota.
+
+TASK 4
+    4. Eliminar notas del DOM:
+        Al hacer click en Eliminar de un <li>:
+        Remueve ese <li> con removeChild() (desde la <ul>)
+        Imprime en consola que se eliminó
+
+TASK 5
+    5. Persistencia con Local Storage:
+        Mantén un arreglo en memoria con las notas.
+        Cada vez que agregues/elimines una nota:
+        Actualiza el arreglo y guárdalo con localStorage.setItem("notas", JSON.stringify(notas)).
+        Al cargar la página:
+        Si existe localStorage.getItem("notas"), recupéralo y renderiza todas las notas.
+        Imprime en consola cuántas notas se cargaron.
+
+TASK 6
+    6. Validación y evidencias:
+        Verifica visualmente que:
+        Las notas aparecen/desaparecen sin recargar la página.
+        Al recargar, las notas siguen (Local Storage).
+        Capturas de pantalla:
+        DOM antes/después de agregar y eliminar.
+        Consola mostrando guardado, cargado y cambios en la lista.
+        Local Storage en el panel de Application.
