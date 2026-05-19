@@ -1,17 +1,17 @@
-TASK 1
+TASK 1 👍
     1. Estructura base (HTML):
         Crea manipulacion_dom.html con:
         Un título y breve instrucción.
         Un <input> de texto y un botón “Agregar”.
         Una <ul id="listaNotas"></ul> para renderizar notas.
 
-TASK 2
+TASK 2 👍
     2. Selección e inspección (JS):
         En un archivo de JavaScript, selecciona:
         input, botón, <ul> usando getElementById y/o querySelector
         Loggea en consola las referencias para confirmar que existen.
 
-TASK 3
+TASK 3 👍
     3. Agregar notas al DOM:
         Al hacer click en Agregar:
         Valida que el input no esté vacío (mensaje simple si lo está)
@@ -20,7 +20,7 @@ TASK 3
         Limpia el input y enfoca de nuevo.
         Imprime en consola que se agregó la nota.
 
-TASK 4
+TASK 4 👍
     4. Eliminar notas del DOM:
         Al hacer click en Eliminar de un <li>:
         Remueve ese <li> con removeChild() (desde la <ul>)
