@@ -25,7 +25,7 @@ TASK 3  👍
     Crea un Map que relacione la categoría del producto (clave) con el nombre del producto (valor).
     Asegúrate de que el Map refleje correctamente la información adicional de cada producto.
 
-TASK 4  
+TASK 4  👍
     4. Iteración sobre las estructuras de datos:
 
     Recorre e imprime los datos en la consola:
@@ -33,7 +33,7 @@ TASK 4
     Usa for…of para recorrer el Set.
     Usa forEach() para recorrer el Map y mostrar claves y valores de forma descriptiva.
 
-TASK 5
+TASK 5 👍
     5. Validación y pruebas:
     
     Implementa validaciones para asegurar que cada producto tenga id, nombre y precio válidos.
