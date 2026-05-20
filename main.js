@@ -25,3 +25,4 @@ if (texto == null) {
     nota.appendChild(eliminar);});
     
 };
+
