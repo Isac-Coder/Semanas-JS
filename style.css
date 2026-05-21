@@ -13,9 +13,13 @@ header {
     text-align: center;
 }
 
-h2 {
+#contenedorNotas {
+    border: 2px solid transparent;
+    margin: 20px 100px 0px 100px;
+}
 
-    
+#listaNotas{
+    padding: 20px;
 }
 
 #formulario {
