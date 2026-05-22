@@ -23,6 +23,7 @@ if (texto == null) {
         nota.textContent = texto.value;
         listaNotas.appendChild(nota);
         texto.value = "";
+texto.focus();
         notas.push(nota.textContent);
         localStorage.setItem("Notas", JSON.stringify(notas));
         console.log("Nota agregada: " + nota.textContent);
