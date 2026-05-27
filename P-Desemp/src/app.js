@@ -2,13 +2,12 @@
 let nombre = document.getElementById("nombre")
 let producto = document.getElementById("producto")
 let precio = document.getElementById("precio")
-let descripcion = document.getElementById("descripcion")
 let lista = document.getElementById("lista")
 let form = document.querySelector("form")
 
 // Valida los campos para evitar datos vacíos o inválidos
 function validarCampos() {
-    if (nombre.value.trim() === "" || producto.value.trim() === "" || precio.value.trim() === "" || descripcion.value.trim() === "") {
+    if (nombre.value.trim() === "" || producto.value.trim() === "" || precio.value.trim() === "") {
         alert("Por favor, completa todos los campos.");
         return false;
     }
@@ -27,13 +26,26 @@ function agregarProducto(event) {
         return; // Si la validación falla, no se agrega el producto
     }
 
+    // Crea un nuevo elemento de lista para el producto
     const nuevoProducto = document.createElement("li");
-    nuevoProducto.textContent = `Nombre: ${nombre.value}, Producto: ${producto.value}, Precio: $${precio.value}, Descripción: ${descripcion.value}`;
+    nuevoProducto.innerHTML = `
+        Nombre: ${nombre.value} <br><br>
+        Producto: ${producto.value} <br><br>
+        Precio: $${precio.value}
+    `;
     
     lista.appendChild(nuevoProducto);
 
     // Limpia los campos después de agregar el producto
     form.reset();
+
+    const BotonEliminar = document.createElement("button");
+    BotonEliminar.textContent = "Eliminar";
+    BotonEliminar.classList = "boton-eliminar";
+    BotonEliminar.addEventListener("click", () => {
+        lista.removeChild(nuevoProducto);
+    });
+    nuevoProducto.appendChild(BotonEliminar);
 }
 
 // Agrega un evento al formulario para manejar el envío

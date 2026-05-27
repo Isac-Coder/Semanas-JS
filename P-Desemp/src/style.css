@@ -4,6 +4,8 @@
   --panel: rgba(255, 255, 255, 0.9);
   --accent: #2563eb;
   --accent-2: #06b6d4;
+  --red: #C1121F;
+  --purple: #386641;
   --text: #0f172a;
   --muted: #6b7280;
   --border: rgba(15, 23, 42, 0.06);
@@ -55,7 +57,7 @@ body {
 
 form { position: relative; z-index: 1; display: grid; gap: 14px; }
 
-input, button {
+input, #boton-submit {
   width: 100%;
   padding: 12px 14px;
   border-radius: 10px;
@@ -71,7 +73,7 @@ input::placeholder { color: var(--muted); }
 input:focus { border-color: var(--accent); box-shadow: 0 8px 24px rgba(37,99,235,0.08); }
 button:hover { transform: translateY(-2px); }
 
-button {
+#boton-submit {
   cursor: pointer;
   border: 0;
   font-weight: 700;
@@ -83,25 +85,35 @@ button {
 }
 
 ul#lista {
-  margin: 0;
-  margin-top: 18px;
-  padding: 0;
-  list-style: none;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
-  position: relative;
-  z-index: 1;
+  padding: 10px;
+}
+
+.boton-eliminar{
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  border: 1px solid transparent;
 }
 
 ul#lista li {
-  padding: 12px 0px 12px 30px;
+  display: grid;
+  padding: 12px 12px 12px 30px;
   border-radius: 10px;
   background: linear-gradient(180deg, #fff 0%, #fbfdff 100%);
   border: 1px solid var(--border);
-  box-shadow: 0 8px 20px rgba(12,18,32,0.04);
+  box-shadow: 0 8px 20px rgba(12, 18, 32, 0.04);
   position: relative;
   color: var(--text);
-}
+  justify-content: space-around;
+  grid-auto-flow: column;
+  }
 
 ul#lista li::before {
   content: '';
@@ -125,6 +137,7 @@ form::before {
   color: var(--muted);
   text-transform: none;
 }
+
 
 @media (max-width: 560px) {
   body { padding: 14px; }
