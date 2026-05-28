@@ -26,7 +26,7 @@ TASK 4 👍
         Remueve ese <li> con removeChild() (desde la <ul>)
         Imprime en consola que se eliminó
 
-TASK 5
+TASK 5 👍
     5. Persistencia con Local Storage:
         Mantén un arreglo en memoria con las notas.
         Cada vez que agregues/elimines una nota:
@@ -35,7 +35,7 @@ TASK 5
         Si existe localStorage.getItem("notas"), recupéralo y renderiza todas las notas.
         Imprime en consola cuántas notas se cargaron.
 
-TASK 6
+TASK 6 👍
     6. Validación y evidencias:
         Verifica visualmente que:
         Las notas aparecen/desaparecen sin recargar la página.

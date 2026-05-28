@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>SEMANA 3</title>
 </head>
 <body>
-    <form id="formulario">
-        <input type="text" id="nombre" placeholder="Nombre">
-        <button type="submit" id="BotonAgregar">Agregar</button>
-    </form>
-    <ul id="listaNotas"></ul>
+    <header>
+        <h1>Manipulación del DOM</h1>
+    </header>
+    <h2>Lista de Notas</h2>
+    <div>
+        <form id="formulario">
+            <input type="text" id="Notas" placeholder="Nota" required>
+            <button type="submit" id="BotonAgregar">Agregar</button>
+        </form>
+    </div>
+    <div id="contenedorNotas">
+        <ul id="listaNotas"></ul>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
