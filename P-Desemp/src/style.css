@@ -57,7 +57,7 @@ body {
 
 form { position: relative; z-index: 1; display: grid; gap: 14px; }
 
-input, #boton-submit {
+input, #boton-submit, #boton-api {
   width: 100%;
   padding: 12px 14px;
   border-radius: 10px;
@@ -73,7 +73,7 @@ input::placeholder { color: var(--muted); }
 input:focus { border-color: var(--accent); box-shadow: 0 8px 24px rgba(37,99,235,0.08); }
 button:hover { transform: translateY(-2px); }
 
-#boton-submit {
+#boton-submit, #boton-api {
   cursor: pointer;
   border: 0;
   font-weight: 700;
@@ -82,6 +82,10 @@ button:hover { transform: translateY(-2px); }
   background: linear-gradient(90deg, var(--accent), var(--accent-2, var(--accent)));
   padding: 12px 16px;
   box-shadow: 0 8px 24px rgba(37,99,235,0.12);
+}
+
+#boton-api {
+  margin-top: 20px;
 }
 
 ul#lista {

@@ -4,6 +4,7 @@ let producto = document.getElementById("producto")
 let precio = document.getElementById("precio")
 let lista = document.getElementById("lista")
 let form = document.querySelector("form")
+let botonAPI = document.getElementById("boton-api")
 
 // Valida los campos para evitar datos vacíos o inválidos
 function validarCampos() {
