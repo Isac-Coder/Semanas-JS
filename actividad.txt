@@ -19,7 +19,7 @@ TASK 3 👍
         Implementa la función para borrar un elemento al hacer clic.
         Usa appendChild() y removeChild() para modificar el DOM.
 
-TASK 4
+TASK 4 👍
     4. Persistencia en Local Storage:
         Guarda los datos agregados en el navegador para mantenerlos entre sesiones.
         Implementa un arreglo global para almacenar los datos.

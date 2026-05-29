@@ -6,48 +6,78 @@ let lista = document.getElementById("lista")
 let form = document.querySelector("form")
 let botonAPI = document.getElementById("boton-api")
 
+
+
 // Valida los campos para evitar datos vacíos o inválidos
 function validarCampos() {
     if (nombre.value.trim() === "" || producto.value.trim() === "" || precio.value.trim() === "") {
         alert("Por favor, completa todos los campos.");
         return false;
     }
-    if (isNaN(precio.value) || Number(precio.value) <= 0) {
+    if (isNaN(Number(precio.value)) || Number(precio.value) <= 0) {
         alert("Por favor, ingresa un precio válido.");
         return false;
     }
     return true;
 }
 
-// Agrega un nuevo producto a la lista
-function agregarProducto(event) {
-    event.preventDefault(); // Evita que el formulario se envíe
-
-    if (!validarCampos()) {
-        return; // Si la validación falla, no se agrega el producto
-    }
-
-    // Crea un nuevo elemento de lista para el producto
-    const nuevoProducto = document.createElement("li");
-    nuevoProducto.innerHTML = `
-        Nombre: ${nombre.value} <br><br>
-        Producto: ${producto.value} <br><br>
-        Precio: $${precio.value}
-    `;
-    
-    lista.appendChild(nuevoProducto);
-
-    // Limpia los campos después de agregar el producto
-    form.reset();
-
-    const BotonEliminar = document.createElement("button");
-    BotonEliminar.textContent = "Eliminar";
-    BotonEliminar.classList = "boton-eliminar";
-    BotonEliminar.addEventListener("click", () => {
-        lista.removeChild(nuevoProducto);
-    });
-    nuevoProducto.appendChild(BotonEliminar);
+// Carga los datos desde localStorage (simplificado y robusto)
+let datos = [];
+try {
+    const raw = localStorage.getItem("Datos");
+    datos = raw ? JSON.parse(raw) : [];
+    if (!Array.isArray(datos)) datos = [];
+} catch (e) {
+    console.warn('localStorage["Datos"] inválido, reiniciando a array vacío', e);
+    datos = [];
+    localStorage.removeItem("Datos");
 }
 
-// Agrega un evento al formulario para manejar el envío
-document.querySelector("form").addEventListener("submit", agregarProducto);
+// Renderiza la lista completa desde el array `datos`
+function renderizarNotas() {
+    lista.innerHTML = "";
+    datos.forEach((infoProducto, index) => {
+        const nuevoProducto = document.createElement("li");
+        nuevoProducto.classList.add("nota");
+        nuevoProducto.innerHTML = `
+            Nombre: ${infoProducto.nombre} <br><br>
+            Producto: ${infoProducto.producto} <br><br>
+            Precio: $${infoProducto.precio}
+        `;
+
+        const botonEliminar = document.createElement("button");
+        botonEliminar.textContent = "Eliminar";
+        botonEliminar.className = "boton-eliminar";
+        botonEliminar.addEventListener("click", () => {
+            datos.splice(index, 1); // eliminar del array
+            localStorage.setItem("Datos", JSON.stringify(datos));
+            renderizarNotas();
+        });
+
+        nuevoProducto.appendChild(botonEliminar);
+        lista.appendChild(nuevoProducto);
+    });
+}
+
+// Agrega un nuevo producto
+function agregarProducto(event) {
+    event.preventDefault();
+    if (!validarCampos()) return;
+
+    const infoProducto = {
+        nombre: nombre.value.trim(),
+        producto: producto.value.trim(),
+        precio: Number(precio.value)
+    };
+
+    datos.push(infoProducto);
+    localStorage.setItem("Datos", JSON.stringify(datos));
+    form.reset();
+    renderizarNotas();
+}
+
+
+
+// Eventos
+form.addEventListener("submit", agregarProducto);
+document.addEventListener("DOMContentLoaded", renderizarNotas);
